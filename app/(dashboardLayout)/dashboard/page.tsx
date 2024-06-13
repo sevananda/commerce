@@ -61,7 +61,7 @@ return (
                     <div className=''>
                         <Link href = {`/dashboard/${data.id}`}>
                         
-                        <img src={data.bgImg}></img>
+                        <img className="rounded-xl" src={data.bgImg}></img>
                         </Link>
                         {/* <div>{data.bgImg}</div> */}
                         <div className='font-extrabold'>{data.title}</div>

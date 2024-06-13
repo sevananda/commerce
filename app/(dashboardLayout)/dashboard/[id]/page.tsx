@@ -38,7 +38,7 @@ const Page = ({rating}) => {
       {data1 ? (
         <div key={data1.id}>
           <div className=' flex flex-row gap-7'>
-            <img className='w-[700px] h-[500px]' src={data1.bgImg} alt={data1.title}/>
+            <img className='w-[700px] h-[500px] rounded-xl' src={data1.bgImg} alt={data1.title}/>
             <div className='flex flex-col'>
           <div> <p className='font-bold'>Description :</p> {data1.desc}</div>
           <div className="flex pb-4"><p className='font-bold'>Rating :</p> {stars}</div>

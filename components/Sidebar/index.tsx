@@ -19,7 +19,7 @@ function Sidebar() {
 
   ];
   return (
-    <div className="w-[200px] h-[100vh] flex flex-col items-center text-start bg-purple-800 pt-11">
+    <div className="w-[400px] h-[100vh] flex flex-col items-center text-start bg-purple-800 pt-11 pl-6 pr-6">
       <div className="flex flex-col justify-center gap-5 ">
         {data.map((navbar) => {
           return (
