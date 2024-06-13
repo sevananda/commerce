@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    images: {
+      domains: ['tse2.mm.bing.net'],
+    },
+  };
+  
+  export default nextConfig;
+  
