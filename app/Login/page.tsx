@@ -164,7 +164,7 @@ const Login = () => {
   const handleLogin = () => {
     const users = JSON.parse(localStorage.getItem('users') || '[]');
     const user = users.find(user => user.email === email && user.password === password);
-
+ 
     if (user) {
       setCookie('loggedInUser', JSON.stringify(user));
       router.push('/dashboard');
@@ -197,7 +197,7 @@ const Login = () => {
       >
         Login
       </button>
-      <div className="register-link text-black">
+      <div className=" text-black">
           <p>Don't have an account? <a href="/Register">Register</a></p>
           </div>
     </div>

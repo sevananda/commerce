@@ -7,10 +7,6 @@
 // import { FaEnvelope } from "react-icons/fa";
 // import Cookies from 'js-cookie';
 
-
-
-
-
 // const Page = ({onSignUp}) => {
 
 //     const [action, setAction] = useState('');
@@ -29,10 +25,8 @@
 
 // // const handleSignup = () => {
 // //   localStorage.setItem('user', JSON.stringify({userName, password1, email}));
-// //    navigate('/Login'); 
+// //    navigate('/Login');
 // // }
-
-
 
 //   const registerLink = () => {
 //     setAction(' active');
@@ -72,7 +66,7 @@
 //           </div>
 //           <div className='remember-forgot'>
 //             <label> <input type="checkbox" />I agree to terms & conditions</label>
-           
+
 //           </div>
 //           <button type='submit' onClick={handleSignUp}  >Register</button>
 //           <div className="login-link">
@@ -86,7 +80,6 @@
 // }
 
 // export default Page
-
 
 // // "use client"
 
@@ -126,37 +119,41 @@
 
 // // export default SignUp;
 
-
-"use client"
-import { useState } from 'react';
-import { setCookie } from 'cookies-next';
-import { useRouter } from 'next/navigation';
+"use client";
+import { useState } from "react";
+import { setCookie } from "cookies-next";
+import { FaUser, FaUserLock } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 const SignUp = () => {
-  const [email, setEmail] = useState('');
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
 
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState("");
   const router = useRouter();
 
   const handleSignUp = () => {
-    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const users = JSON.parse(localStorage.getItem("users") || "[]");
     users.push({ email, password });
-    localStorage.setItem('users', JSON.stringify(users));
-    router.push('/Login');
+    localStorage.setItem("users", JSON.stringify(users));
+    router.push("/Login");
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen  bg-black ">
-      <div className="p-6 bg-white rounded-xl shadow-md ">
+    <div className="flex items-center justify-center min-h-screen  bg-black wrapper ">
+      <div className="p-6 input-box">
         <h2 className="mb-4 text-xl font-semibold">Sign Up</h2>
         <input
           type="username"
           placeholder="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="w-full px-3 py-2 mb-4 border rounded text-black"
+          className="w-full px-3 py-2 mb-4 border rounded text-black "
+          
         />
+        <FaUser  className='absolute right-9  top-[115px] font-semibold translate-y-28'/>
         <input
           type="email"
           placeholder="Email"
@@ -164,6 +161,7 @@ const SignUp = () => {
           onChange={(e) => setEmail(e.target.value)}
           className="w-full px-3 py-2 mb-4 border rounded text-black"
         />
+        <FaEnvelope  className='absolute right-9  top-[190px] font-semibold translate-y-28'/>
         <input
           type="password"
           placeholder="Password"
@@ -171,15 +169,24 @@ const SignUp = () => {
           onChange={(e) => setPassword(e.target.value)}
           className="w-full px-3 py-2 mb-4 border rounded text-black"
         />
+        <FaUserLock  className='absolute right-9  top-[270px] font-semibold translate-y-28'/>
+        <div className="">
+          <label className=" flex flex-row pr-[200px] ">
+         
+            <input type="checkbox" />I agree to terms & conditions
+          </label>
+        </div>
         <button
           onClick={handleSignUp}
           className="w-full px-3 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
         >
           Sign Up
         </button>
-        <div className="login-link text-black">
-           <p>Already have an account? <a href="/Login">Login</a></p>
-          </div>
+        <div className="login-link ">
+          <p>
+            Already have an account? <a href="/Login">Login</a>
+          </p>
+        </div>
       </div>
     </div>
   );
