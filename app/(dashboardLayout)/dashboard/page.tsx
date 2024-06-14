@@ -36,7 +36,7 @@ export const data =[
 
     },
 ]
-function page() {
+function Page() {
 
 
 
@@ -77,4 +77,4 @@ return (
 
 }
 
-export default page
+export default Page
