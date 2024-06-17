@@ -16,7 +16,7 @@
 
 "use client"
 import React, { useState, useEffect } from 'react';
-// import Cookies from 'js-cookie';
+import Cookies from 'js-cookie';
 import SignUp from './Register/page';
 import Login from './Login/page';
 import Home from './Home/page';

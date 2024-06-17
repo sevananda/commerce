@@ -50,7 +50,7 @@ const Home = () => {
 
   const handleLogout = () => {
     deleteCookie('loggedInUser');
-    router.push('/login');
+    router.push('/L ogin');
   };
 
   if (!user) return null; // Prevent flicker while checking auth
