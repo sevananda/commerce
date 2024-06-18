@@ -1,6 +1,10 @@
+"use client"
 import Link from "next/link";
 import React from "react";
 
+
+import { useRouter } from 'next/navigation';
+import { deleteCookie } from 'cookies-next';
 function Navbar() {
   // const data = [
 
@@ -9,6 +13,14 @@ function Navbar() {
   //     url: "/Login",
   //   },
   // ];
+  const router = useRouter();
+
+  const handleLogout = () => {
+    localStorage.clear(); 
+    deleteCookie('loggedInUser'); 
+    router.push('/login'); 
+  };
+  
   return (
     <div>
       <div className="w-[100vw] h-[50px] flex flex-row  justify-between gap-5 align-middle items-center pl-10 pr-10 bg-indigo-600">
@@ -16,7 +28,7 @@ function Navbar() {
         <div>
           <Link href={`/Login`}>
             {/* <img src={data.bgImg}></img> */}
-            <button>Log out</button>
+            <button onClick={handleLogout}>Log out</button>
           </Link>
         </div>
       </div>

@@ -149,30 +149,31 @@ const SignUp = () => {
           type="username"
           placeholder="username"
           value={username}
+          required
           onChange={(e) => setUsername(e.target.value)}
           className="w-full px-3 py-2 mb-4 border rounded text-black "
-          
         />
-        <FaUser  className='absolute right-9  top-[115px] font-semibold translate-y-28'/>
+        <FaUser className="absolute right-9  top-[115px] font-semibold translate-y-28" />
         <input
           type="email"
           placeholder="Email"
           value={email}
+          required 
           onChange={(e) => setEmail(e.target.value)}
           className="w-full px-3 py-2 mb-4 border rounded text-black"
         />
-        <FaEnvelope  className='absolute right-9  top-[190px] font-semibold translate-y-28'/>
+        <FaEnvelope className="absolute right-9  top-[190px] font-semibold translate-y-28" />
         <input
           type="password"
           placeholder="Password"
           value={password}
+          required
           onChange={(e) => setPassword(e.target.value)}
           className="w-full px-3 py-2 mb-4 border rounded text-black"
         />
-        <FaUserLock  className='absolute right-9  top-[270px] font-semibold translate-y-28'/>
+        <FaUserLock className="absolute right-9  top-[270px] font-semibold translate-y-28" />
         <div className="">
           <label className=" flex flex-row pr-[200px] ">
-         
             <input type="checkbox" />I agree to terms & conditions
           </label>
         </div>

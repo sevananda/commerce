@@ -249,6 +249,7 @@ const Login = () => {
             type="email"
             placeholder="Email"
             value={email}
+            required
             onChange={(e) => setEmail(e.target.value)}
             className="w-full px-3 py-2 mb-4 border rounded text-black"
           />
@@ -256,6 +257,8 @@ const Login = () => {
             type="password"
             placeholder="Password"
             value={password}
+            required
+
             onChange={(e) => setPassword(e.target.value)}
             className="w-full px-3 py-2 mb-4 border rounded text-black"
           />
