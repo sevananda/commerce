@@ -127,6 +127,7 @@ import { FaLock } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 
+
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");

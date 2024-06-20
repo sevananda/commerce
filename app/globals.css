@@ -44,8 +44,10 @@ body {
   border-radius: 20px;
   color: #ffff;
   display: flex;
+  justify-content: center;
   align-items: center;
-  overflow: hidden;
+  /* padding-left: 400px; */
+  /* overflow: hidden; */
   transition: height .2s ease;
 
 }

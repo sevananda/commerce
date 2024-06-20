@@ -12,7 +12,6 @@
 
 // // const Loginpage = ({onLogin}) => {
 
-
 // //   const [action, setAction] = useState('');
 // //   const [userName, setuserName] = useState('');
 // //   const [password1, setPassword1] = useState('');
@@ -91,7 +90,7 @@
 // //           </div>
 // //           <div className='remember-forgot'>
 // //             <label> <input type="checkbox" />I agree to terms & conditions</label>
-           
+
 // //           </div>
 // //           <button type='submit' onClick={data1}>Register</button>
 // //           <div className="login-link">
@@ -164,7 +163,7 @@
 //   const handleLogin = () => {
 //     const users = JSON.parse(localStorage.getItem('users') || '[]');
 //     const user = users.find(user => user.email === email && user.password === password);
- 
+
 //     if (user) {
 //       setCookie('loggedInUser', JSON.stringify(user));
 //       router.push('/dashboard');
@@ -207,44 +206,44 @@
 
 // export default Login;
 
+"use client";
 
-
-"use client"
-
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-
-import { setCookie } from 'cookies-next';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { FaEnvelope, FaUserLock } from "react-icons/fa";
+import { setCookie } from "cookies-next";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const router = useRouter();
 
   const handleLogin = (e) => {
-    e.preventDefault();  // Prevent the default form submission behavior
+    e.preventDefault(); // Prevent the default form submission behavior
 
     if (!email || !password) {
-      alert('Please enter both email and password');
+      alert("Please enter both email and password");
       return;
     }
 
-    const users = JSON.parse(localStorage.getItem('users') || '[]');
-    const user = users.find(user => user.email === email && user.password === password);
- 
+    const users = JSON.parse(localStorage.getItem("users") || "[]");
+    const user = users.find(
+      (user) => user.email === email && user.password === password
+    );
+
     if (user) {
-      setCookie('loggedInUser', JSON.stringify(user));
-      router.push('/dashboard');
+      setCookie("loggedInUser", JSON.stringify(user));
+      router.push("/dashboard");
     } else {
-      alert('Invalid credentials');
+      alert("Invalid credentials");
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-black">
-      <div className="p-6 bg-white rounded shadow-md">
-        <h2 className="mb-4 text-xl font-semibold">Login</h2>
-        <form onSubmit={handleLogin}>
+    <div className="flex items-center justify-center align-center min-h-screen bg-black wrapper">
+      <div className="p-6 input-box"> 
+        <h2 className="mb-4 ml-4 text-xl font-semibold">Login</h2>
+        <form onSubmit={handleLogin}> 
           <input
             type="email"
             placeholder="Email"
@@ -253,15 +252,18 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
             className="w-full px-3 py-2 mb-4 border rounded text-black"
           />
+          <FaEnvelope className="absolute  right-[480px]  top-[190px]  font-semibold translate-y-28" />
+
           <input
             type="password"
             placeholder="Password"
             value={password}
             required
-
             onChange={(e) => setPassword(e.target.value)}
             className="w-full px-3 py-2 mb-4 border rounded text-black"
           />
+          <FaUserLock className="absolute right-[480px]  top-[260px] font-semibold translate-y-28" />
+
           <button
             type="submit"
             className="w-full px-3 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
@@ -269,8 +271,13 @@ const Login = () => {
             Login
           </button>
         </form>
-        <div className="text-black mt-4">
-          <p>Don't have an account? <a href="/Register" className="text-blue-500">Register</a></p>
+        <div className="login-link">
+          <p>
+            Don't have an account?{" "}
+            <a href="/Register" className="text-blue-500">
+              Register
+            </a>
+          </p>
         </div>
       </div>
     </div>
